@@ -1,0 +1,4 @@
+li.list-item-complete {
+    color: #888888;
+    text-decoration: line-through;
+}
