@@ -1,7 +1,10 @@
-CREATE TABLE lists (
-    list_id INT AUTO_INCREMENT NOT NULL,
-    name VARCHAR(255) NOT NULL,
-    date_created TIMESTAMP NOT NULL,
-    date_updated DATETIME NOT NULL,
-    CONSTRAINT pk_list_id PRIMARY KEY (list_id)
-);
+CREATE TABLE task (
+    id int NOT NULL AUTO_INCREMENT,
+    task varchar(255) NOT NULL,
+    list_id int NOT NULL,
+    complete ENUM("T","F"),
+    date_added timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    date_completed timestamp DEFAULT NULL,
+    CONSTRAINT pk_id PRIMARY KEY(id),
+    CONSTRAINT fk_list_id FOREIGN KEY (list_id) REFERENCES list(list_id)
+)
