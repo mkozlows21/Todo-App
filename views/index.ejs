@@ -16,11 +16,8 @@
   </form>
   <ul>
     <% result.forEach(function(task) { %>
-      <% if (task.complete == "F") { %>
-        <li class="list-item"><%= task.task %></li>
-      <% } else { %>
-        <li class="list-item-complete"><%= task.task %></li>
-    <% }}); %>
+      <li class=<%= (task.complete == "F") ? "list-item" : "list-item-complete" %>><%= task.task %></li>
+    <% }); %>
   </ul>
 
   <script src="/js/script.js"></script>
